@@ -7,7 +7,15 @@ hoy = Time.now.strftime("%Y-%m-%d")
 
 config = YAML.load_file("database.yaml")
 
-conn = PG.connect :dbname => "#{config["config"]["dbname"]}", :user => "#{config["config"]["user"]}", :host=> "#{config["config"]["host"]}", :password => "#{config["config"]["password"]}"
+def dbconfig
+  @dbname = config["config"]["dbname"]
+  @user = config["config"]["user"]
+  @host = config["config"]["host"]
+  @password = config["config"]["password"]
+
+end
+
+conn = PG.connect :dbname => "#{@dbname}", :user => "#{@user}", :host=> "#{@host}", :password => "#{@password}"
 
 
 result = conn.exec("select reminders.user_id, reminders.when_activate, reminders.content, users.mobile_num from reminders join users on reminders.user_id = users.id where when_activate::text like '#{hoy}%';")
