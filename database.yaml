@@ -1,0 +1,5 @@
+database:
+  dbname: name_db
+  user: user_dm
+  host: host_db
+  password: password_db
