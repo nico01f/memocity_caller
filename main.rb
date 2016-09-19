@@ -8,10 +8,10 @@ hoy = Time.now.strftime("%Y-%m-%d")
 config = YAML.load_file("database.yaml")
 
 def dbconfig
-  @dbname = config["config"]["dbname"]
-  @user = config["config"]["user"]
-  @host = config["config"]["host"]
-  @password = config["config"]["password"]
+  @dbname = config["database"]["dbname"]
+  @user = config["database"]["user"]
+  @host = config["database"]["host"]
+  @password = config["database"]["password"]
 
 end
 
