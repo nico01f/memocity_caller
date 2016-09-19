@@ -1,0 +1,2 @@
+
+con = PG.connect :dbname => 'd814pral4f35oh', :user => 'fwgussdvvrmoia', :host=> 'ec2-54-83-3-38.compute-1.amazonaws.com', :password => 'wja1vjCs2pWx-EiKBaggGxo5eq'
