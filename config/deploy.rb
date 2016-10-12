@@ -14,7 +14,7 @@ set :deploy_to, '/home/deployer/memocity_caller'
 set :scm, :git
 
 # Default value for :format is :airbrussh.
-set :format, :airbrussh
+set :format, :pretty
 
 set :hipchat_token, "Hx29Lcmtxo6o6RmZAn3rvBTWAf9a00SaEPGd11jk"
 set :hipchat_room_name, "pruebas"
