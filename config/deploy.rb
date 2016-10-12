@@ -16,6 +16,17 @@ set :scm, :git
 # Default value for :format is :airbrussh.
 set :format, :airbrussh
 
+set :hipchat_token, "Hx29Lcmtxo6o6RmZAn3rvBTWAf9a00SaEPGd11jk"
+# Optional
+set :hipchat_enabled, true # set to false to prevent any messages from being sent
+set :hipchat_announce, false # notify users
+set :hipchat_color, 'yellow' #normal message color
+set :hipchat_success_color, 'green' #finished deployment message color
+set :hipchat_failed_color, 'red' #cancelled deployment message color
+set :hipchat_message_format, 'html' # Sets the deployment message format, see https://www.hipchat.com/docs/api/method/rooms/message
+set :hipchat_options, {
+  :api_version  => "v2" # Set "v2" to send messages with API v2
+}
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
 # set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
