@@ -5,7 +5,7 @@ require 'yaml'
 
 hoy = Time.now.strftime("%Y-%m-%d")
 
-# CONFIG DB
+# DB CONFIG
 config = YAML.load_file("database.yaml")
 
 def dbconfig

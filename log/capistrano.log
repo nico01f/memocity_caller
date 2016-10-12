@@ -142,3 +142,80 @@ a86187d4ac5e9aacbed0b62625e756ce373dca45	refs/heads/master
   INFO [c71985cf] Running /usr/bin/env echo "Branch master (at a86187d4ac5e9aacbed0b62625e756ce373dca45) deployed as release 20161012200606 by nicof" >> /home/deployer/memocity_caller/revisions.log as deployer@192.168.122.42
  DEBUG [c71985cf] Command: cd /home/deployer/memocity_caller/releases && /usr/bin/env echo "Branch master (at a86187d4ac5e9aacbed0b62625e756ce373dca45) deployed as release 20161012200606 by nicof" >> /home/deployer/memocity_caller/revisions.log
   INFO [c71985cf] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-10-12 17:16:10 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [908efb72] Running /usr/bin/env mkdir -p /tmp/memocity_caller/ as deployer@192.168.122.42
+ DEBUG [908efb72] Command: /usr/bin/env mkdir -p /tmp/memocity_caller/
+  INFO [908efb72] Finished in 2.634 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/memocity_caller/git-ssh.sh 0.0%
+  INFO Uploading /tmp/memocity_caller/git-ssh.sh 100.0%
+  INFO [5e16b976] Running /usr/bin/env chmod +rx /tmp/memocity_caller/git-ssh.sh as deployer@192.168.122.42
+ DEBUG [5e16b976] Command: /usr/bin/env chmod +rx /tmp/memocity_caller/git-ssh.sh
+  INFO [5e16b976] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [592943f2] Running /usr/bin/env git ls-remote --heads git@github.com:nico01f/memocity_caller.git as deployer@192.168.122.42
+ DEBUG [592943f2] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/memocity_caller/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:nico01f/memocity_caller.git )
+ DEBUG [592943f2] 	ccf53196405331a32bccfaddb849e79a7fa9d7fd	refs/heads/dev
+2fba7d89a779137d0d6e9c42e32cd22121d097a3	refs/heads/master
+  INFO [592943f2] Finished in 2.499 seconds with exit status 0 (successful).
+  INFO [3564c976] Running /usr/bin/env mkdir -p /home/deployer/memocity_caller/shared /home/deployer/memocity_caller/releases as deployer@192.168.122.42
+ DEBUG [3564c976] Command: /usr/bin/env mkdir -p /home/deployer/memocity_caller/shared /home/deployer/memocity_caller/releases
+  INFO [3564c976] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [0d39b361] Running [ -f /home/deployer/memocity_caller/current/REVISION ] as deployer@192.168.122.42
+ DEBUG [0d39b361] Command: [ -f /home/deployer/memocity_caller/current/REVISION ]
+ DEBUG [0d39b361] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [e8fb1c91] Running /usr/bin/env cat /home/deployer/memocity_caller/current/REVISION 2>/dev/null as deployer@192.168.122.42
+ DEBUG [e8fb1c91] Command: /usr/bin/env cat /home/deployer/memocity_caller/current/REVISION 2>/dev/null
+ DEBUG [e8fb1c91] 	a86187d4ac5e9aacbed0b62625e756ce373dca45
+ DEBUG [e8fb1c91] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [6eb5e302] Running [ -f /home/deployer/memocity_caller/repo/HEAD ] as deployer@192.168.122.42
+ DEBUG [6eb5e302] Command: [ -f /home/deployer/memocity_caller/repo/HEAD ]
+ DEBUG [6eb5e302] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deployer/memocity_caller/repo
+ DEBUG [50927a75] Running if test ! -d /home/deployer/memocity_caller/repo; then echo "Directory does not exist '/home/deployer/memocity_caller/repo'" 1>&2; false; fi as deployer@192.168.122.42
+ DEBUG [50927a75] Command: if test ! -d /home/deployer/memocity_caller/repo; then echo "Directory does not exist '/home/deployer/memocity_caller/repo'" 1>&2; false; fi
+ DEBUG [50927a75] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [018d4dcd] Running /usr/bin/env git remote update --prune as deployer@192.168.122.42
+ DEBUG [018d4dcd] Command: cd /home/deployer/memocity_caller/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/memocity_caller/git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [018d4dcd] 	Fetching origin
+ DEBUG [018d4dcd] 	From github.com:nico01f/memocity_caller
+   a86187d..2fba7d8  master     -> master
+  INFO [018d4dcd] Finished in 1.999 seconds with exit status 0 (successful).
+ DEBUG [e211b27c] Running if test ! -d /home/deployer/memocity_caller/repo; then echo "Directory does not exist '/home/deployer/memocity_caller/repo'" 1>&2; false; fi as deployer@192.168.122.42
+ DEBUG [e211b27c] Command: if test ! -d /home/deployer/memocity_caller/repo; then echo "Directory does not exist '/home/deployer/memocity_caller/repo'" 1>&2; false; fi
+ DEBUG [e211b27c] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [d36e61b5] Running /usr/bin/env mkdir -p /home/deployer/memocity_caller/releases/20161012201618 as deployer@192.168.122.42
+ DEBUG [d36e61b5] Command: cd /home/deployer/memocity_caller/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/memocity_caller/git-ssh.sh" ; /usr/bin/env mkdir -p /home/deployer/memocity_caller/releases/20161012201618 )
+  INFO [d36e61b5] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [56d18929] Running /usr/bin/env git archive master | tar -x -f - -C /home/deployer/memocity_caller/releases/20161012201618 as deployer@192.168.122.42
+ DEBUG [56d18929] Command: cd /home/deployer/memocity_caller/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/memocity_caller/git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /home/deployer/memocity_caller/releases/20161012201618 )
+  INFO [56d18929] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [41ba3eb4] Running if test ! -d /home/deployer/memocity_caller/repo; then echo "Directory does not exist '/home/deployer/memocity_caller/repo'" 1>&2; false; fi as deployer@192.168.122.42
+ DEBUG [41ba3eb4] Command: if test ! -d /home/deployer/memocity_caller/repo; then echo "Directory does not exist '/home/deployer/memocity_caller/repo'" 1>&2; false; fi
+ DEBUG [41ba3eb4] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [f6905de6] Running /usr/bin/env git rev-list --max-count=1 master as deployer@192.168.122.42
+ DEBUG [f6905de6] Command: cd /home/deployer/memocity_caller/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/memocity_caller/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [f6905de6] 	2fba7d89a779137d0d6e9c42e32cd22121d097a3
+ DEBUG [f6905de6] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [1ba1531c] Running if test ! -d /home/deployer/memocity_caller/releases/20161012201618; then echo "Directory does not exist '/home/deployer/memocity_caller/releases/20161012201618'" 1>&2; false; fi as deployer@192.168.122.42
+ DEBUG [1ba1531c] Command: if test ! -d /home/deployer/memocity_caller/releases/20161012201618; then echo "Directory does not exist '/home/deployer/memocity_caller/releases/20161012201618'" 1>&2; false; fi
+ DEBUG [1ba1531c] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [b44b6879] Running /usr/bin/env echo "2fba7d89a779137d0d6e9c42e32cd22121d097a3" >> REVISION as deployer@192.168.122.42
+ DEBUG [b44b6879] Command: cd /home/deployer/memocity_caller/releases/20161012201618 && /usr/bin/env echo "2fba7d89a779137d0d6e9c42e32cd22121d097a3" >> REVISION
+  INFO [b44b6879] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [7d85d0c9] Running /usr/bin/env ln -s /home/deployer/memocity_caller/releases/20161012201618 /home/deployer/memocity_caller/releases/current as deployer@192.168.122.42
+ DEBUG [7d85d0c9] Command: /usr/bin/env ln -s /home/deployer/memocity_caller/releases/20161012201618 /home/deployer/memocity_caller/releases/current
+  INFO [7d85d0c9] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [29e16b40] Running /usr/bin/env mv /home/deployer/memocity_caller/releases/current /home/deployer/memocity_caller as deployer@192.168.122.42
+ DEBUG [29e16b40] Command: /usr/bin/env mv /home/deployer/memocity_caller/releases/current /home/deployer/memocity_caller
+  INFO [29e16b40] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [adeac242] Running /usr/bin/env ls -xtr /home/deployer/memocity_caller/releases as deployer@192.168.122.42
+ DEBUG [adeac242] Command: /usr/bin/env ls -xtr /home/deployer/memocity_caller/releases
+ DEBUG [adeac242] 	20161012200606	20161012201618
+ DEBUG [adeac242] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [ab5005ba] Running if test ! -d /home/deployer/memocity_caller/releases; then echo "Directory does not exist '/home/deployer/memocity_caller/releases'" 1>&2; false; fi as deployer@192.168.122.42
+ DEBUG [ab5005ba] Command: if test ! -d /home/deployer/memocity_caller/releases; then echo "Directory does not exist '/home/deployer/memocity_caller/releases'" 1>&2; false; fi
+ DEBUG [ab5005ba] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [a7df5148] Running /usr/bin/env echo "Branch master (at 2fba7d89a779137d0d6e9c42e32cd22121d097a3) deployed as release 20161012201618 by nicof" >> /home/deployer/memocity_caller/revisions.log as deployer@192.168.122.42
+ DEBUG [a7df5148] Command: cd /home/deployer/memocity_caller/releases && /usr/bin/env echo "Branch master (at 2fba7d89a779137d0d6e9c42e32cd22121d097a3) deployed as release 20161012201618 by nicof" >> /home/deployer/memocity_caller/revisions.log
+  INFO [a7df5148] Finished in 0.004 seconds with exit status 0 (successful).

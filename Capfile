@@ -1,6 +1,6 @@
 # Load DSL and set up stages
 require "capistrano/setup"
-require 'hipchat/capistrano'
+require 'hipchat'
 # Include default deployment tasks
 require "capistrano/deploy"
 

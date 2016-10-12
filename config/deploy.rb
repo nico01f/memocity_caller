@@ -17,6 +17,7 @@ set :scm, :git
 set :format, :airbrussh
 
 set :hipchat_token, "Hx29Lcmtxo6o6RmZAn3rvBTWAf9a00SaEPGd11jk"
+set :hipchat_room_name, "pruebas"
 # Optional
 set :hipchat_enabled, true # set to false to prevent any messages from being sent
 set :hipchat_announce, false # notify users
