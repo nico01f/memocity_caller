@@ -1,3 +1,4 @@
+#Config database
 database: 
   dbname: # dbname
   user: # user
